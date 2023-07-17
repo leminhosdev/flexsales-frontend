@@ -6,14 +6,14 @@
           </li>
       <li class="burger" (click)="toggleMenu()">
         <i class="material-icons">{{ isMenuOpen ? "close" : "menu" }}</i>
-      </li>
+      </li>    
       <li class="menu" [class.is-open]="isMenuOpen">
         <a routerLink="/home" class="menu-item">Home</a>
         <a  class="menu-item" style="cursor: pointer;">Analytics</a>
         <a routerLink="/aboutus" class="menu-item">Dashboard</a>
         <a routerLink="/jobs" class="menu-item">About us</a>
         <a routerLink="/jobs" class="menu-item">Clients</a>
-        <a routerLink="/jobs" class="menu-item">Account</a>
+       <a routerLink="/jobs" class="menu-item">Account</a> 
       </li>
     </ul>
   </nav>

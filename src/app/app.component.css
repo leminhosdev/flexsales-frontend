@@ -76,7 +76,7 @@ padding: 0 10px 0;
     height: 90px;
    justify-content: center;
 }
-.learn-more{
+.learn-more, .learn-more-2{
     margin-top: 25px;
     width: 170px;
     height: 50px;
@@ -88,6 +88,16 @@ padding: 0 10px 0;
     font-size: 16px;
     cursor: pointer;
 }
+.learn-more-2{
+   display: block;
+   margin: 0 auto;
+   margin-bottom: 100px;
+}
+
+.learn-more-2:hover, .learn-more:hover{
+   background-color: rgb(185, 185, 185);
+   color: white;
+ }
 
 .container, .container-2{
     margin-top: 100px;
@@ -156,6 +166,24 @@ padding: 0 10px 0;
     font-size: 50px;
     text-align: center;
 }
+.banner-3{
+  
+    width: 100%;
+   height: fit-content;
+   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0 100px;
+    
+}
+.banner-3 img{
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.329);
+    border:20px;
+}
+
 
 @media (max-width:930px){
 
