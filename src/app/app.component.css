@@ -135,19 +135,37 @@ padding: 0 10px 0;
     word-break: break-word; 
 }
 .skills{
-   
-    display: flex;
-    height: 50px;
-    width: 140px;
+    margin-top: 20px;
+    display: block;
+    height: 210 px;
+    width: 300px;
     border-radius: 5%;
-    background-color:#000000;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.219);
     justify-content: center;
     align-items: center;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     cursor: pointer;
     margin: 10px 20px 0;
-    
+  
+}
+.skills-p-1{
+    margin-left: 5px;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+.skills-p-2{
+    width: fit-content;
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    color:#677788;
+}
+.skills mat-icon{
+    color: #007DFE;
+   font-size: 55px;
+   width: 100%;
+   height: fit-content;
 }
 .container-skills{
     display: flex;
