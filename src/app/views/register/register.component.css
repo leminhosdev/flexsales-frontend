@@ -35,7 +35,7 @@
 }
 .form{
     background-color: white;
-    height: 500px;
+    min-height: 500px;
     width: 400px;
     border-radius: 20px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.315);
@@ -98,6 +98,7 @@ display: flex;
 flex-direction: column;
 width: 100%;
 align-items: center;
+margin-bottom: 20px;
 }
 .buttons button{
     background-color: #4c11ec;
@@ -112,6 +113,26 @@ align-items: center;
    max-width: 200px;
    font-family: 'Poppins', sans-serif;
    cursor: pointer;
+}
+.validation{
+    margin-top: 4px;
+    color: red;
+    font-family: 'Poppins', sans-serif;
+}
+.buttons a{
+    background-color: #4c11ec;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    padding: 3px 1em 0;
+    width: 80%;
+    max-width: 200px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
 }
 .buttons p{
     font-family: 'Poppins', sans-serif;
