@@ -6,15 +6,23 @@
             <img src="../../../assets/Email capture-amico.png" alt="">
     </div> 
     <div class="screen">
-        <div class="form">
+        <form class="form"  [formGroup]="form" (ngSubmit)="onRegisterSubmit()" #formDir="ngForm">
             <p class="sing-in">Sing up</p>
             <div class="spaces">
-                
-                <input type="text" placeholder="Email">
+                    
+                    <input type="text" placeholder="Email" formControlName="email" [ngStyle]="{'border-color': (email.invalid && formDir.submitted) ? 'red' : 'initial'}">
+                    <div *ngIf="email.invalid && formDir.submitted" >
+                        <p class="validation" *ngIf="email.errors?.['required']" >This field can't be empty</p>
+                        <p class="validation"  *ngIf="email.errors?.['email']" >Invalid email format</p>
+                    </div>
+                    
             </div>
             <div class="spaces">
-                
-                <input type="text" placeholder="Password">
+        
+                <input type="text" placeholder="Password" formControlName="password"  [ngStyle]="{'border-color': (password.invalid && formDir.submitted) ? 'red' : 'initial'}">
+                <div *ngIf="password.invalid && formDir.submitted" >
+                    <p class="validation" *ngIf="password.errors?.['required']" >This field can't be empty</p>
+                </div>
             </div>
             <div class="spaces">
                <p class="have-account">Don't have a account? <a routerLink="/register">Sing up</a></p>
@@ -23,10 +31,10 @@
             <div class="buttons">
                 <button class="registerbutton">Login</button>
                 <p>or</p>
-                <button><mat-icon>person</mat-icon> Demo account</button>
+                <a><mat-icon>person</mat-icon> Demo account</a>
             </div>
                 
-        </div>
+        </form>
     </div>
     </div>
 
