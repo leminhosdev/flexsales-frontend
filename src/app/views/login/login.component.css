@@ -1,0 +1,140 @@
+.background{
+    display: flex;
+}
+
+.part-1{
+  width: 70%;
+  max-width: 600px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #5D9CE8, #3FB1DD);
+  align-items: center;
+  justify-content: center;
+}
+.part-1 p{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 0 2em 0;
+    text-align: center;
+}
+.part-1 img{
+   
+    width: 70%;
+}
+.screen{
+    background-color: aliceblue;
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    background-color: white;
+    height: 400px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.315);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5em 0;
+    min-width: 290px;
+}
+.sing-in{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    margin-top: 15px;
+}
+.spaces{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    
+}
+.spaces input{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgb(184, 184, 184);
+    font-family: 'Poppins', sans-serif;
+    margin-top: 35px;
+}
+.select-area-p{
+    margin-top: 25px;
+    font-family: 'Poppins', sans-serif;
+   
+}
+.have-account{
+    margin-top: 12px;
+    
+    font-family: 'Poppins', sans-serif;
+   
+}
+.spaces a{
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    color: #4c11ec;
+}
+.spaces select{
+    outline: none;
+    height: 40px;
+    border-color: #ebebeb;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.spaces option{
+    border: none;
+   border-radius: 10px;
+   
+}
+.spaces input:focus{
+    outline: none;
+}
+.buttons{
+margin-top: 30px;
+display: flex;
+flex-direction: column;
+width: 100%;
+align-items: center;
+}
+.buttons button{
+    background-color: #4c11ec;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+   width: 80%;
+   max-width: 200px;
+   font-family: 'Poppins', sans-serif;
+   cursor: pointer;
+}
+.buttons p{
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+mat-icon{
+    padding-top: 5px;
+}
+
+@media(max-width: 867px){
+    .part-1{
+        display: none;
+    }
+    .screen{
+        width: 100%;
+        background-image: linear-gradient(to bottom, #5D9CE8, #3FB1DD);
+    }
+
+}
+@media(max-width: 600px){
+    .form{
+        margin: 0 2em 0;
+    }
+}
