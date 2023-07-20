@@ -5,7 +5,7 @@ body{
 .banner, .banner-2{
     width: 100%;
     height: 730px; 
-    background-image: url(../assets/busy-woman.jpg);
+    background-image: url(../../../assets/busy-woman.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,7 +14,7 @@ body{
 }
 .banner-2{
     margin-top: 100px;
-    background-image: url(../assets/nikolay-DUfkXRwGQm8-unsplash.jpg);
+    background-image: url(../../../assets/nikolay-DUfkXRwGQm8-unsplash.jpg);
     height: 600px;
     display: flex;
     flex-direction: column;
