@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ClientServiceService } from 'src/app/services/client-service.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit{
   form!: FormGroup;
     
-  constructor (private formBuilder: FormBuilder) {
+  constructor (private formBuilder: FormBuilder, private clientService: ClientServiceService) {
     
   }
 
@@ -38,6 +39,7 @@ export class LoginComponent implements OnInit{
     if(this.form.invalid){
       return;
     }
+    this.clientService.logIn(this.form.value)
     console.log('Formulário de Registro enviado!');
     
   }
