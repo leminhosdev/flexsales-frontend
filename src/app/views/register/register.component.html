@@ -9,11 +9,11 @@
         <form class="form" [formGroup]="form" (ngSubmit)="onRegisterSubmit()" #formDir="ngForm">
             <p class="sing-in">Sing in</p>
             <div class="spaces">
-                <input type="text" placeholder="Full name" formControlName="name"  [ngStyle]="{'border-color': (name.invalid && formDir.submitted) ? 'red' : 'initial'}">
-                <div *ngIf="name.invalid && formDir.submitted" >
-                    <p class="validation" *ngIf="name.errors?.['required']" >This field can't be empty</p>
-                    <p class="validation"  *ngIf="name.errors?.['maxlength']" >Maximum caracters is 80</p>
-                    <p class="validation"  *ngIf="name.errors?.['minlength']" >Miniumum caracters is 3</p>
+                <input type="text" placeholder="Full name" formControlName="clientName"  [ngStyle]="{'border-color': (clientName.invalid && formDir.submitted) ? 'red' : 'initial'}">
+                <div *ngIf="clientName.invalid && formDir.submitted" >
+                    <p class="validation" *ngIf="clientName.errors?.['required']" >This field can't be empty</p>
+                    <p class="validation"  *ngIf="clientName.errors?.['maxlength']" >Maximum caracters is 80</p>
+                    <p class="validation"  *ngIf="clientName.errors?.['minlength']" >Miniumum caracters is 3</p>
                 </div>
                 
             </div>
@@ -33,13 +33,13 @@
             </div>
             <div class="spaces">
                 <p class="select-area-p">Select area: </p>
-               <select name="Area" id="area" formControlName="area" [ngStyle]="{'border-color': (area.invalid && formDir.submitted) ? 'red' : 'initial'}">
+               <select name="Area" id="area" formControlName="clientArea" [ngStyle]="{'border-color': (clientArea.invalid && formDir.submitted) ? 'red' : 'initial'}">
                 <option value="business">business</option>
                 <option value="technology">business</option>
                 <option value="retail">retail</option>
                </select>
-               <div *ngIf="area.invalid && formDir.submitted" >
-                <p class="validation" *ngIf="area.errors?.['required']" >This field can't be empty</p>
+               <div *ngIf="clientArea.invalid && formDir.submitted" >
+                <p class="validation" *ngIf="clientArea.errors?.['required']" >This field can't be empty</p>
             </div>
                <p class="have-account">Have a account? <a routerLink="/login">Sing in</a></p>
             </div>
