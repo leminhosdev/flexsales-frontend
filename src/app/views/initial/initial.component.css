@@ -1,0 +1,85 @@
+body{
+    background-color: rgb(235, 235, 235);
+    min-height: 100vh;
+    padding-top: 90px;
+}
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 5em ;
+}
+.first-graphics{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 0 2em;
+}
+.sales-dashboard, .revenue-dashboard{
+    margin-top: 20px;
+    min-width: 300px;
+    width: 60%;
+    max-width: 500px;
+    background-color: rgb(255, 255, 255);
+    height: 350px;
+    border-radius: 10px;
+    margin: 2em 2em 0;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.137);
+}
+.first-graphics p{
+    margin-left: 1em;
+}
+.main-datas{
+    width: 100%;
+    background-color: white;
+    height: 200px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.137);
+}
+.sales{
+    display: flex;
+    flex-direction: column;
+
+}
+.field-group{
+    width: auto;
+}
+.file-field{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -1;
+}
+.file-label{
+    padding: 10px 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: rgb(0, 26, 255);
+    transition: 0.3s ease;
+}
+.file-label i{
+    margin-right: 5px;
+}
+.file-field:focus + .file-label,.file-label:hover{
+    color: aqua;
+}
+.file-label.border{
+    border: 2px solid blue;
+}
+.file-field:focus +.file-label.border, .file-label.border:hover{
+    border-color: aquamarine;
+}
+.file-label.background{
+    background: green;
+    color: aliceblue;
+}
+.file-field:focus +.file-label.background, .file-label.background:hover{
+    background: green;
+    color: #fff;
+}
