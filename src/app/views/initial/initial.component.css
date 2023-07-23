@@ -45,41 +45,43 @@ body{
 .sales{
     display: flex;
     flex-direction: column;
+}
+.custom-file-wrp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filename{
+    background-color: #fff;
+    padding: 15px 15px;
+    border: 1px solid #ddd;
+    width: 300px;
+    margin-right: 15px;
+    color: #999;
+}
+.custom-file input[type="file"]{
+    display: none;
+}
+.custom-file label{
+    cursor: pointer;
+    background-color: #ed1c24;
+    display: inline-block;
+    color: #ddd;
+    padding: 14px 40px;
+    text-align: center;
+}
 
-}
-.field-group{
-    width: auto;
-}
-.file-field{
-    width: 0;
-    height: 0;
-    opacity: 0;
-    z-index: -1;
-}
-.file-label{
-    padding: 10px 20px;
-    font-size: 1.4em;
-    font-weight: bold;
-    color: rgb(0, 26, 255);
-    transition: 0.3s ease;
-}
-.file-label i{
-    margin-right: 5px;
-}
-.file-field:focus + .file-label,.file-label:hover{
-    color: aqua;
-}
-.file-label.border{
-    border: 2px solid blue;
-}
-.file-field:focus +.file-label.border, .file-label.border:hover{
-    border-color: aquamarine;
-}
-.file-label.background{
-    background: green;
-    color: aliceblue;
-}
-.file-field:focus +.file-label.background, .file-label.background:hover{
-    background: green;
-    color: #fff;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

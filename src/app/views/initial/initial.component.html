@@ -2,21 +2,20 @@
 <body>
     <div class="container">
         <h1>Goor morning</h1>
-        <div class="field-group">
-            <input type="file" name="file[]" id="file" class="file-field">
-            <label for="file" class="file-label background">
-                <i class="fa fa upload"></i>
-                <span>Chose a file&hellip;</span>
-            </label>
+        <div class="custom-file-wrp">
+            <div class="filename">
+                Ex: Sasdsd
+            </div>
+                <div class="custom-file">
+                    <label for="fileupload">upload </label>
+                        <input type="file" id="fileupload" >
+            </div>
         </div>
-       
         
         <div class="first-graphics">
-           
-          
+                
             <div class="sales-dashboard">
                 <p>Sales</p>
-
             </div>
             <div class="revenue-dashboard">
                 <p>Revenue</p>
@@ -31,3 +30,16 @@
     </div>
 </body>
 <app-footer></app-footer>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+    $(function()
+    {
+        $("#fileupload").change(function(event){
+            console.log(event.target.files[0].name)
+           var x = event.target.files[0].name
+            $(".filename").text(x)
+        });
+    }
+    )
+  
+</script>
