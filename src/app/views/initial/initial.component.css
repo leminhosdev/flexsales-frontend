@@ -3,10 +3,6 @@ body{
     min-height: 100vh;
     padding-top: 90px;
 }
-*{
-    font-family: 'Poppins', sans-serif;
-}
-
 .container{
     display: flex;
     flex-direction: column;
@@ -16,7 +12,7 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 0 2em;
+    margin: 0 0 4em;
 }
 .sales-dashboard, .revenue-dashboard{
     margin-top: 20px;
@@ -32,8 +28,18 @@ body{
     font-weight: 500;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.137);
 }
+.sales-history{
+    
+    min-width: 300px;
+
+    height: 100px;
+    background-color: #fff;
+    justify-content: center;
+    
+}
 .first-graphics p{
     margin-left: 1em;
+    font-family: 'Poppins', sans-serif;
 }
 .main-datas{
     width: 100%;
@@ -46,30 +52,72 @@ body{
     display: flex;
     flex-direction: column;
 }
+.dashboard-text{
+    margin-top: 40px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+.attach-text{
+      margin-top: 40px;
+      
+     
+}
+.attach-text p{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    white-space: nowrap;
+    text-indent: -110px;
+}
+
 .custom-file-wrp{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.custom-file-wrp button{
+    cursor: pointer;
+    background-color: #ed1c24;
+    display: inline-block;
+    color: #ffffff;
+    border: none;
+    align-items: center;
+    margin-left: 20px;
+    padding: 13px 23px;
+    text-align: center;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
 .filename{
     background-color: #fff;
-    padding: 15px 15px;
+    display: flex;
     border: 1px solid #ddd;
-    width: 300px;
-    margin-right: 15px;
+    width: 200px;
+    min-width: 200px;
+    margin-right: 0px;
     color: #999;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+.custom-file{
+    align-items: flex-end;
 }
 .custom-file input[type="file"]{
     display: none;
 }
 .custom-file label{
     cursor: pointer;
-    background-color: #ed1c24;
+    background-color: #000000;
     display: inline-block;
-    color: #ddd;
-    padding: 14px 40px;
+    color: #ffffff;
+    
+    align-items: center;
+    padding: 8px 20px;
     text-align: center;
 }
+
 
 
 
