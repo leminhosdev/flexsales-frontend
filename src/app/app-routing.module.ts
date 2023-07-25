@@ -20,7 +20,8 @@ const routes: Routes = [
     },
     {
       path: 'initial',
-      component: InitialComponent
+      component: InitialComponent,
+      canActivate: [AuthguardGuard]
 
     }
 ];

@@ -12,10 +12,10 @@
                 <div class="custom-file">
                     
                     <label for="fileupload"><mat-icon>attach_file</mat-icon></label>
-                        <input type="file" id="fileupload" name="excel" >
+                        <input type="file" id="fileupload" name="excel" (change)="onChange($event)">
             </div>
             </div>
-            <button>Save</button>
+            <button (click)="uploadFile()">Save</button>
         </div>
         <div class="sales-history">
             

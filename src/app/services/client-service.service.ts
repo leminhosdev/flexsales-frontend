@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { enviroment } from 'src/enviroment/enviroment';
 import { Client } from '../entitys/ClientModel';
 import jwtDecode from 'jwt-decode';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -18,6 +19,16 @@ export class ClientServiceService {
   save(cliet: Client){
     const url = `${this.baseUrl}/register`;
     return this.httpClient.post<Client>(url, cliet);
+  }
+  getLoggedUser(){
+    const url = `${this.baseUrl}/getloggeduser`;
+    return this.httpClient.get<Client>(url);
+  }
+  uploadFile(file: File):Observable<any>{
+    const url = `${this.baseUrl}/uploadfile`;
+    const formData = new FormData(); 
+      formData.append("file", file, file.name);
+    return this.httpClient.post(url, formData);
   }
   
   getAuthorizationToken(){
