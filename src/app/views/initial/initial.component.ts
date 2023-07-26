@@ -22,15 +22,15 @@ export class InitialComponent {
      file:['']
    
    })
-  
+   this.getLoggedUser()
   }
 
   
   public getLoggedUser(){
   this.clientService.getLoggedUser().subscribe(
     userlogged => {
-      console.log(userlogged.email)
-      this.user = userlogged;
+      console.log(userlogged)
+  
     }
   ); 
   }

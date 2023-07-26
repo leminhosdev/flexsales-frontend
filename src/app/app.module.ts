@@ -13,6 +13,9 @@ import { LoginComponent } from './views/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InitialComponent } from './views/initial/initial.component'; 
+import { AuthguardGuard } from './security/authguard.guard';
+import { HttpInterceptorProviders } from './security';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,7 @@ import { InitialComponent } from './views/initial/initial.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthguardGuard, HttpInterceptorProviders, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
