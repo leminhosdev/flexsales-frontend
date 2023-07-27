@@ -1,3 +1,4 @@
+import { ExcelFile } from "./ExcelFileModel";
 
 export interface Client{
     id?: String;
@@ -9,5 +10,6 @@ export interface Client{
     profit: number;
     revenue: number;
     salesData: Date;
-    excelTable: File;
+    excelFile: ExcelFile;
+    productList: Client[];
 }
