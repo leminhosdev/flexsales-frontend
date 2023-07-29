@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Client } from 'src/app/entitys/ClientModel';
+import { ExcelFile } from 'src/app/entitys/ExcelFileModel';
 import { ClientServiceService } from 'src/app/services/client-service.service';
 
 @Component({
@@ -12,6 +13,8 @@ export class InitialComponent {
    form!: FormGroup;
     user!: Client;
     file!: File;
+    client!: Client;
+
   constructor (private formBuilder: FormBuilder, private clientService: ClientServiceService) {
     
   }
@@ -29,8 +32,8 @@ export class InitialComponent {
   public getLoggedUser(){
   this.clientService.getLoggedUser().subscribe(
     userlogged => {
-      console.log(userlogged)
-  
+      this.client = userlogged;
+    
     }
   ); 
   }

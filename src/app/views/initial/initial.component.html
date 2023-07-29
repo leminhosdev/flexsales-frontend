@@ -2,10 +2,10 @@
 <body>
     <div class="container">
         
-        <div class="attach-text">
-            <p>Attach Your excel table</p>
-        </div>
-        <div class="custom-file-wrp">
+       <div class="attach-text" *ngIf="!client?.excelFile">
+                <p>Attach Your excel table</p>
+            </div>
+        <div class="custom-file-wrp" *ngIf="!client?.excelFile">
             
             <div class="filename">
                 Files .XLSL
@@ -17,8 +17,14 @@
             </div>
             <button (click)="uploadFile()">Save</button>
         </div>
-        <div class="sales-history">
-            
+        <div>
+                
+            <div class="sales-history-container">
+                <p class="sales-history-container-p1">Recent sales</p>
+                <div class="sales-history">
+                    <p *ngIf="client.sales == null" class="sales-history-container-p2">You don't put up new sales</p>
+                </div>
+            </div>
         </div>
         <h1 class="dashboard-text">Dashboard</h1>
         <div class="first-graphics">
