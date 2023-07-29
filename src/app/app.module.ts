@@ -16,6 +16,7 @@ import { InitialComponent } from './views/initial/initial.component';
 import { AuthguardGuard } from './security/authguard.guard';
 import { HttpInterceptorProviders } from './security';
 import { DatePipe } from '@angular/common';
+import { ProductComponent } from './views/product/product.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DatePipe } from '@angular/common';
     RegisterComponent,
     HomeComponent,
     LoginComponent,
-    InitialComponent
+    InitialComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

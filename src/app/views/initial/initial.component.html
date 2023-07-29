@@ -22,7 +22,11 @@
             <div class="sales-history-container">
                 <p class="sales-history-container-p1">Recent sales</p>
                 <div class="sales-history">
-                    <p *ngIf="client.sales == null" class="sales-history-container-p2">You don't put up new sales</p>
+                    <div *ngIf="client.sales == null" class="no-sales-container">
+                        <p class="sales-history-container-p2">You don't put up new sales</p>
+                        <button>Add sale</button>
+                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -5,6 +5,7 @@ import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { InitialComponent } from './views/initial/initial.component';
 import { AuthguardGuard } from './security/authguard.guard';
+import { ProductComponent } from './views/product/product.component';
 const routes: Routes = [
   {
     path: 'register',
@@ -22,7 +23,9 @@ const routes: Routes = [
       path: 'initial',
       component: InitialComponent,
       canActivate: [AuthguardGuard]
-
+    },{
+      path: 'initial/product',
+      component: ProductComponent
     }
 ];
 

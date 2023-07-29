@@ -150,6 +150,22 @@ body{
 .sales-history-container-p2{
 color: #cacaca;
 }
+.no-sales-container{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.no-sales-container button{
+   width: 100px;
+   height: 30px;
+   margin-top: 5px;
+    background-color: #ed1c24;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
 
 
 
