@@ -17,6 +17,7 @@ import { AuthguardGuard } from './security/authguard.guard';
 import { HttpInterceptorProviders } from './security';
 import { DatePipe } from '@angular/common';
 import { ProductComponent } from './views/product/product.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProductComponent } from './views/product/product.component';
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [AuthguardGuard, HttpInterceptorProviders, DatePipe],
   bootstrap: [AppComponent]
