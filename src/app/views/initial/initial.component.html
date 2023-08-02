@@ -2,11 +2,13 @@
 <body>
     <div class="container">
         
+
+     
+      
        <div class="attach-text" *ngIf="!client?.excelFile">
                 <p>Attach Your excel table</p>
             </div>
         <div class="custom-file-wrp" *ngIf="!client?.excelFile">
-            
             <div class="filename">
                 Files .XLSL
                 <div class="custom-file">
@@ -18,13 +20,12 @@
             <button (click)="uploadFile()">Save</button>
         </div>
         <div>
-                
             <div class="sales-history-container">
                 <p class="sales-history-container-p1">Recent sales</p>
                 <div class="sales-history">
-                    <div *ngIf="client.sales == null" class="no-sales-container">
+                    <div *ngIf="client?.sales == null" class="no-sales-container">
                         <p class="sales-history-container-p2">You don't put up new sales</p>
-                        <button>Add sale</button>
+                        <button >Add sale</button>
                     </div>
                     
                 </div>
@@ -50,16 +51,4 @@
     </div>
 </body>
 <app-footer></app-footer>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script>
-    $(function()
-    {
-        $("#fileupload").change(function(event){
-            console.log(event.target.files[0].name)
-           var x = event.target.files[0].name
-            $(".filename").text(x)
-        });
-    }
-    )
-  
-</script>
+

@@ -4,6 +4,7 @@ import { Client } from 'src/app/entitys/ClientModel';
 import { ExcelFile } from 'src/app/entitys/ExcelFileModel';
 import { ClientServiceService } from 'src/app/services/client-service.service';
 
+
 @Component({
   selector: 'app-initial',
   templateUrl: './initial.component.html',
@@ -14,14 +15,19 @@ export class InitialComponent {
     user!: Client;
     file!: File;
     client!: Client;
+    myScriptElement!: HTMLScriptElement;
+
 
   constructor (private formBuilder: FormBuilder, private clientService: ClientServiceService) {
-    
+   
+
   }
 
+ 
+ 
   ngOnInit(): void {
    this.form = this.formBuilder.group({
-    
+   
      file:['']
    
    })
