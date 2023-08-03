@@ -41,9 +41,14 @@ export class ProductComponent implements OnInit{
     const filterValue = value.toLowerCase()
     return this.streets.filter(street => street.toLowerCase().includes(filterValue))
   }
-  
+
   displayFn(subject: any) {
     return subject ? subject.name : undefined;
+  }
+
+
+  searchByKeyword(keyword: any){
+    console.log(keyword)
   }
   cancel(): void {
     this.dialogRef.close();
