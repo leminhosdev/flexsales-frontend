@@ -1,20 +1,20 @@
 <h1 class="tittle">Order</h1>
 <div class="container">
-    <form [formGroup]="form" #formDir="ngForm">
+   
     <div class="search-container">
         <p>Product name</p>
         <div class="search">
          <mat-icon>search</mat-icon>
          <input type="text" placeholder="Search product name, code..." name="keyWord" [formControl]="control"
-         [matAutocomplete]="auto">
-         <mat-autocomplete #auto="matAutocomplete" >
+         [matAutocomplete]="auto" #keyword (keyup)="searchByKeyword(keyword.value)">
+         <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
             <mat-option *ngFor="let street of filteredStreets | async " [value]="street">
-              {{street}}
+              {{street.name}}
             </mat-option>
           </mat-autocomplete>
         </div>
        
     </div>
-   </form>
+   
 </div>
 
