@@ -18,7 +18,8 @@ import { HttpInterceptorProviders } from './security';
 import { DatePipe } from '@angular/common';
 import { ProductComponent } from './views/product/product.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginComponent,
     InitialComponent,
     ProductComponent
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatAutocompleteModule,
+    MatFormFieldModule
   ],
   providers: [AuthguardGuard, HttpInterceptorProviders, DatePipe],
   bootstrap: [AppComponent]

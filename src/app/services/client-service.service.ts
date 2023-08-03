@@ -78,7 +78,7 @@ export class ClientServiceService {
          localStorage.setItem('token', token);
          
        
-         this.route.navigate(['']);
+         this.route.navigate(['/initial']);
        }, error: (erro) => {
          console.log("Credenciais Incorretas ou inválidas");
        }
