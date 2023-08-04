@@ -1,20 +1,86 @@
+
+ 
 <h1 class="tittle">Order</h1>
+
+ 
 <div class="container">
-   
+  <form  [formGroup]="form"  #formDir="ngForm" (ngSubmit)="onRegisterSubmit()">
+
     <div class="search-container">
         <p>Product name</p>
         <div class="search">
          <mat-icon>search</mat-icon>
          <input type="text" placeholder="Search product name, code..." name="keyWord" [formControl]="control"
-         [matAutocomplete]="auto" #keyword (keyup)="searchByKeyword(keyword.value)">
+         [matAutocomplete]="auto" #keyword (keyup)="searchByKeyword(keyword.value)" [(ngModel)]="product" >
          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
             <mat-option *ngFor="let street of filteredStreets | async " [value]="street">
-              {{street.name}}
+                    <div class="options-container">
+                        <div class="code-price-div">
+                            <p class="code">Code {{street.code}}</p>
+                            <p class="price">R$ {{street.price}}</p>
+                        </div>
+                        <p class="name">{{street.name}}</p>
+                    </div>
             </mat-option>
           </mat-autocomplete>
         </div>
+
+        
+        <div class="big">
+            <div class="search-container"  id="comission-container" > 
+                    <p>Price</p>
+                    <div class="search" >
+                        <p id="real">R$</p> 
+                     <input type="number"  value="{{product.price}}" id="bottom-line" formControlName="price">                
+                     </div>
+           </div>
+
+            <div class="search-container" id="taxes-container">
+            <p>Comission</p>
+            <div class="search">  
+                <p id="percentage">%</p>      
+             <input type="number" [value]="product.commission" id="bottom-line" formControlName="commission">                
+            </div>
+        </div>
+        
+        </div>
        
-    </div>
+        <div class="big">
+             <div class="search-container" id="comission-container" >
+            <p>Taxes</p>
+            <div class="search">  
+                <p id="percentage">%</p>      
    
+             <input type="number"  value="{{product.taxes}}" id="bottom-line" formControlName="taxes">                
+            </div>
+        </div>
+        <div class="search-container" id="taxes-container">
+                    <p>Amount</p>
+                    <div class="search">  
+                        <mat-icon id="local_shipping">local_shipping</mat-icon>  
+                    <input type="number"  id="bottom-line" formControlName="amount">                
+                    </div>
+                </div>
+
+        </div> 
 </div>
 
+
+
+<div class="div-button">
+    <button class="add-button" type="submit">Add</button>
+</div>
+<div class="div-history">
+    <p>history</p>
+    <div class="container-history">
+        <div *ngFor="let orders of productList" class="indivual">
+                <p id="name-history">{{orders.name}}</p>
+                <p id="total-history">R$ {{orders.price}}</p>
+        </div>
+
+
+    </div>
+</div>
+
+</form>
+<div>

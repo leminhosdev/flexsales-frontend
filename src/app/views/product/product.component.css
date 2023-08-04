@@ -1,8 +1,18 @@
 .container{
-    width: 650px;
+    margin: 0 2em 0;
+    width: 320px;
     height: 600px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+.div-button, .div-history{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+    height: fit-content;
 }
 
 .tittle{
@@ -13,22 +23,28 @@
     color: #333333;
 }
 .search-container{
-    margin: 20px 20px 0;
+    margin: 0 auto; /* Center the div horizontally */
+    width: 100%;
+  
 }
 .search-container p{
     font-family: 'Poppins', normal;
     font-size: 16px;
     font-weight: 400;
     color: #333333;
-    
+    min-width: none;
 }
 .search input{
     border: none;
     width: 100%;
     height: 100%;
+    min-width: none;
+    margin: 0 1px 0px;
+ 
 }
 .search input:focus{
     outline: none;
+    min-width: none;
 }
 
 .search{
@@ -38,11 +54,102 @@
     margin-top: 5px;
     border: 1px solid rgb(83, 83, 83);
     border-radius: 5px;
+    min-width: none;
+    width: 100%;
 }
 
-.results{
-    background-color: aqua;
-    height: 150px;
-    overflow-y: auto;
+#comission-container{
+    width: 50%;
+    margin-right: 0.5em;
+}
+#taxes-container{
+    width: 50%;
+    margin-left: 0.5em;
+}
+.big{
+    display: flex;
+}
+.big input{
+    padding-left: 3px;
+}
+#bottom-line{
+    border-left: 1px solid #333333;
+}
+#local_shipping{
+    font-size: 20px;
+    margin-left: 3px;
+    margin-top: 2px;
 }
 
+.options-container{
+    display: block;
+}
+.code-price-div{
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+}
+.price{
+    font-family: 'Poppins', normal;
+    font-weight: 400;
+}
+.code{
+    font-family: 'Poppins', normal;
+    font-size: 10px;
+    font-weight: 600;
+}
+.name{
+    font-family: 'Poppins', normal;
+    font-weight: 500;
+    margin-bottom: 10px;
+    max-width: 150px;
+    -webkit-line-clamp: 3; /* Número máximo de linhas */
+    -webkit-box-orient: vertical;
+    overflow: ellipsis;
+    max-height: calc(1.2em * 3);
+    display: -webkit-box;
+}
+#percentage, #real{
+    font-family: 'Poppins', normal;
+    font-weight: 500; 
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.add-button{
+    width: 80%;
+    height: 30px;
+    background-color: rgb(0, 132, 255);
+    font-family: 'Poppins', normal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+}
+.div-history p{
+    text-align: center;
+}
+.indivual{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+#name-history{
+    
+}
+.container-history{
+    width: 95%;
+    height: 300px;
+    background-color: rgb(221, 221, 221);
+    border-radius: 5px;
+    padding-top: 1em;
+}
+mat-option{
+    border-bottom: 1px solid rgb(102, 102, 102);
+}
+@media (max-width: 470px){
+    .container{
+        width: 200px;
+    }
+}
