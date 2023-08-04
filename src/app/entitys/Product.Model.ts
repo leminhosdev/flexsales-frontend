@@ -2,10 +2,11 @@ import { Client } from "./ClientModel";
 
 export interface Product{
     id?: String;
-    code: String;
+    code?: String;
     name: String;
-    comission: Number;
+    commission: Number;
     price: Number;
     taxes: Number;
-    clientOwner: Client;
+    amount: Number;
+    clientOwner?: Client;
 }

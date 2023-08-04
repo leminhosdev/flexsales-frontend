@@ -1,8 +1,11 @@
 import { NgFor, AsyncPipe } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { Observable, map, startWith } from 'rxjs';
+import { Observable, debounceTime, distinctUntilChanged, filter, map, startWith, switchMap, tap } from 'rxjs';
+import { Product } from 'src/app/entitys/Product.Model';
+import { ProductServiceService } from 'src/app/services/product-service.service';
 
 
 @Component({
@@ -13,47 +16,91 @@ import { Observable, map, startWith } from 'rxjs';
 export class ProductComponent implements OnInit{
   form!: FormGroup;
   control = new FormControl();
-  filteredStreets!: Observable<String[]>
-  streets: string[] = ['Champs-Élysées', 'Lombard Street', 'Abbey Road', 'Fifth Avenue'];
-  
-  
+  selectedProductControl = new FormControl(null);
+  filteredStreets!: Observable<Product[]>
+
+  SEARCH_URL: string = "http://localhost:8090/searchProduct?keyWord=";
+  product: Product = [] as unknown as Product;
+  productList: Product[] = [];
+
   constructor(
-    public dialogRef: MatDialogRef<ProductComponent>, private formBuilder: FormBuilder
+    public dialogRef: MatDialogRef<ProductComponent>, private formBuilder: FormBuilder, private productService: ProductServiceService, private http: HttpClient
   ) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-    
-      price: [null],
-      aa: [null],
-      password: [null],
-      jj: [null],
-      p: [null],
+      name: [this.product.name],
+      price: [this.product.price],
+      commission: [this.product.commission],
+      taxes: [this.product.taxes],
+      amount: [null],
    })
    
    this.filteredStreets = this.control.valueChanges.pipe(
     startWith(''),
-    map(value => this._filter(value))
+    map(value => (typeof value === 'string' ? value.trim() : value.name.trim())),
+    filter(value => value.length > 1),
+    debounceTime(200),
+    tap(value => console.log(value)),
+    distinctUntilChanged(),
+    switchMap(value =>  this.http.get<Product[]>(this.SEARCH_URL + encodeURIComponent(value)))
    )
+
+
+
+   this.form.get('name')?.valueChanges.subscribe(value => {
+    this.product.name = value;
+  });
+
+
+  this.form.get('price')?.valueChanges.subscribe(value => {
+    this.product.price = parseFloat(value);
+  });
+
+  this.form.get('commission')?.valueChanges.subscribe(value => {
+    this.product.commission = parseFloat(value);
+  });
+
+  this.form.get('taxes')?.valueChanges.subscribe(value => {
+    this.product.taxes = parseFloat(value);
+  });
+ 
   }
   
-  private _filter(value: string): string[]{
-    const filterValue = value.toLowerCase()
-    return this.streets.filter(street => street.toLowerCase().includes(filterValue))
-  }
-
+  
   displayFn(subject: any) {
     return subject ? subject.name : undefined;
   }
 
 
   searchByKeyword(keyword: any){
-    console.log(keyword)
+    
   }
   cancel(): void {
     this.dialogRef.close();
   }
 
+  onRegisterSubmit(){
+  
+   
+      
+      const amount = parseFloat(this.form.get('amount')?.value);
 
+      
+      const productw: Product = {
+        name: this.product.name,
+        price: this.product.price,
+        taxes: this.product.taxes,
+        commission: this.product.commission,
+        amount: amount,
+
+      };
+      this.productList.push(this.product)
+      console.log('Product:', this.productList);
+      
+    
+  }
+
+  
 }
 
