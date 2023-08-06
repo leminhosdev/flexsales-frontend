@@ -74,8 +74,8 @@
     <p>history</p>
     <div class="container-history">
         <div *ngFor="let orders of productList" class="indivual">
-                <p id="name-history">{{orders.name}}</p>
-                <p id="total-history">R$ {{orders.price}}</p>
+                <p id="name-history">{{ orders.name.length > 10 ? orders.name.slice(0, 20) + '...' : orders.name }}</p>
+                <p id="total-history">R$ {{orders.totalPrice}}</p>
         </div>
 
 

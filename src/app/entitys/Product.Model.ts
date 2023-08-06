@@ -5,8 +5,9 @@ export interface Product{
     code?: String;
     name: String;
     commission: Number;
-    price: Number;
+    price: number;
     taxes: Number;
-    amount: Number;
+    amount: number;
+    totalPrice?: number;
     clientOwner?: Client;
 }

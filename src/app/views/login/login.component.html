@@ -7,7 +7,7 @@
     </div> 
     <div class="screen">
         <form class="form"  [formGroup]="form" (ngSubmit)="onRegisterSubmit()" #formDir="ngForm">
-            <p class="sing-in">Sing up</p>
+            <p class="sing-in">Sing in</p>
             <div class="spaces">
                     
                     <input type="text" placeholder="Email" formControlName="email" [ngStyle]="{'border-color': (email.invalid && formDir.submitted) ? 'red' : 'initial'}">
@@ -19,7 +19,7 @@
             </div>
             <div class="spaces">
         
-                <input type="text" placeholder="Password" formControlName="password"  [ngStyle]="{'border-color': (password.invalid && formDir.submitted) ? 'red' : 'initial'}">
+                <input type="password" placeholder="Password" formControlName="password"  [ngStyle]="{'border-color': (password.invalid && formDir.submitted) ? 'red' : 'initial'}">
                 <div *ngIf="password.invalid && formDir.submitted" >
                     <p class="validation" *ngIf="password.errors?.['required']" >This field can't be empty</p>
                 </div>

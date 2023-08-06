@@ -93,9 +93,10 @@ export class ProductComponent implements OnInit{
         taxes: this.product.taxes,
         commission: this.product.commission,
         amount: amount,
-
+        totalPrice: parseFloat((this.product.price * amount).toFixed(2))
+      
       };
-      this.productList.push(this.product)
+      this.productList.push(productw)
       console.log('Product:', this.productList);
       
     
