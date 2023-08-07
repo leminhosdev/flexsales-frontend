@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Observable, debounceTime, distinctUntilChanged, filter, map, startWith, switchMap, tap } from 'rxjs';
+import { OrderEntity } from 'src/app/entitys/OrderEntityModel';
 import { Product } from 'src/app/entitys/Product.Model';
 import { ProductServiceService } from 'src/app/services/product-service.service';
 
@@ -22,7 +23,12 @@ export class ProductComponent implements OnInit{
   SEARCH_URL: string = "http://localhost:8090/searchProduct?keyWord=";
   product: Product = [] as unknown as Product;
   productList: Product[] = [];
-
+  totalPriceTobeAdded: number = 0;
+  totalCommissionValueTobeAdded: number = 0;
+  totalTaxesValueTobeAdded: number = 0;
+  productsAmountTobeAdded: number = 0;
+  totalItens = 0;
+  order: OrderEntity = [] as unknown as OrderEntity;
   constructor(
     public dialogRef: MatDialogRef<ProductComponent>, private formBuilder: FormBuilder, private productService: ProductServiceService, private http: HttpClient
   ) {}
@@ -93,15 +99,36 @@ export class ProductComponent implements OnInit{
         taxes: this.product.taxes,
         commission: this.product.commission,
         amount: amount,
-        totalPrice: parseFloat((this.product.price * amount).toFixed(2))
-      
+        totalPrice: parseFloat((this.product.price * amount).toFixed(2)),
+        
       };
+     
+      this.totalPriceTobeAdded += productw.totalPrice;
+      this.totalTaxesValueTobeAdded += (productw.totalPrice * productw.taxes)/100 ;
+      this.totalCommissionValueTobeAdded += ((productw.totalPrice - ((productw.totalPrice * productw.taxes)/ 100)) * productw.commission)/100;
+      this.totalItens += amount;
+      
+  
       this.productList.push(productw)
       console.log('Product:', this.productList);
       
     
   }
 
-  
+ 
+  saveOrder(){
+    const currentDate = new Date();
+    
+    this.order = {
+    salesData: currentDate,
+    totalCommissionValue: this.totalCommissionValueTobeAdded,
+    totalPrice: this.totalPriceTobeAdded,
+    totalTaxesValue: this.totalTaxesValueTobeAdded,
+    productList: this.productList,
+    productsAmount: this.totalItens
+
+    }
+    console.log(this.order)
+  }
 }
 

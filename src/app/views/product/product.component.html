@@ -75,11 +75,17 @@
     <div class="container-history">
         <div *ngFor="let orders of productList" class="indivual">
                 <p id="name-history">{{ orders.name.length > 10 ? orders.name.slice(0, 20) + '...' : orders.name }}</p>
-                <p id="total-history">R$ {{orders.totalPrice}}</p>
+                <p id="total-history">R$ {{ orders.totalPrice | number:'1.2-2' }}</p>
         </div>
 
-
     </div>
+</div>
+<div class="dados-container">
+    <div class="dados"><p>total revenue: </p></div>
+    <div class="dados"><p>itens: </p></div>
+    <div class="dados"><p>taxes value: </p></div>
+    <div class="dados"><p>profit: </p></div>
+    <button (click)="saveOrder()">aa</button>
 </div>
 
 </form>

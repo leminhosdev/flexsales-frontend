@@ -1,13 +1,15 @@
 import { Client } from "./ClientModel";
+import { OrderEntity } from "./OrderEntityModel";
 
 export interface Product{
     id?: String;
     code?: String;
     name: String;
-    commission: Number;
+    commission: number;
     price: number;
-    taxes: Number;
+    taxes: number;
     amount: number;
-    totalPrice?: number;
+    totalPrice: number;
     clientOwner?: Client;
+    orderEntity?: OrderEntity;
 }
