@@ -81,12 +81,12 @@
     </div>
 </div>
 <div class="dados-container">
-    <div class="dados"><p>total revenue: </p></div>
-    <div class="dados"><p>itens: </p></div>
-    <div class="dados"><p>taxes value: </p></div>
-    <div class="dados"><p>profit: </p></div>
-    <button (click)="saveOrder()">aa</button>
+    <div class="dados"><p>total revenue: R$ {{totalPriceTobeAdded | number:'1.2-2'}}</p></div>
+    <div class="dados"><p>taxes value: R$ {{totalTaxesValueTobeAdded | number:'1.2-2'}}</p></div>
+    <div class="dados"><p>profit: R$ {{totalCommissionValueTobeAdded | number:'1.2-2'}}</p></div>
+    <div class="dados"><p>itens: {{totalItens}}</p></div>
 </div>
 
 </form>
+<button (click)="saveOrder()">aa</button>
 <div>

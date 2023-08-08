@@ -6,6 +6,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Observable, debounceTime, distinctUntilChanged, filter, map, startWith, switchMap, tap } from 'rxjs';
 import { OrderEntity } from 'src/app/entitys/OrderEntityModel';
 import { Product } from 'src/app/entitys/Product.Model';
+import { ClientServiceService } from 'src/app/services/client-service.service';
+import { OrderServiceService } from 'src/app/services/order-service.Service';
 import { ProductServiceService } from 'src/app/services/product-service.service';
 
 
@@ -28,9 +30,10 @@ export class ProductComponent implements OnInit{
   totalTaxesValueTobeAdded: number = 0;
   productsAmountTobeAdded: number = 0;
   totalItens = 0;
+  amountInput = 1;
   order: OrderEntity = [] as unknown as OrderEntity;
   constructor(
-    public dialogRef: MatDialogRef<ProductComponent>, private formBuilder: FormBuilder, private productService: ProductServiceService, private http: HttpClient
+    public dialogRef: MatDialogRef<ProductComponent>, private formBuilder: FormBuilder, private productService: ProductServiceService, private http: HttpClient, private orderService: OrderServiceService, private clientService: ClientServiceService
   ) {}
 
   ngOnInit(): void {
@@ -106,7 +109,7 @@ export class ProductComponent implements OnInit{
       this.totalPriceTobeAdded += productw.totalPrice;
       this.totalTaxesValueTobeAdded += (productw.totalPrice * productw.taxes)/100 ;
       this.totalCommissionValueTobeAdded += ((productw.totalPrice - ((productw.totalPrice * productw.taxes)/ 100)) * productw.commission)/100;
-      this.totalItens += amount;
+      this.totalItens += productw.amount;
       
   
       this.productList.push(productw)
@@ -121,14 +124,18 @@ export class ProductComponent implements OnInit{
     
     this.order = {
     salesData: currentDate,
-    totalCommissionValue: this.totalCommissionValueTobeAdded,
+    totalCommissionValue: parseFloat(this.totalCommissionValueTobeAdded.toFixed(2)),
     totalPrice: this.totalPriceTobeAdded,
-    totalTaxesValue: this.totalTaxesValueTobeAdded,
+    totalTaxesValue: parseFloat(this.totalTaxesValueTobeAdded.toFixed(2)),
     productList: this.productList,
     productsAmount: this.totalItens
 
     }
-    console.log(this.order)
+    this.orderService.saveOrder(this.order).subscribe(
+      result => console.log('oi')
+    );
+    
+    
   }
 }
 

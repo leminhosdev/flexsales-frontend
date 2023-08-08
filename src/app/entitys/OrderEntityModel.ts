@@ -9,6 +9,6 @@ export interface OrderEntity{
     productsAmount: number;
     totalTaxesValue: number;
     totalCommissionValue: number;
-    clientOwner?: Client;
+    clientOrderOwner?: Client;
     productList: Product[];
 }

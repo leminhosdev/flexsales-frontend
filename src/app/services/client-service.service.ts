@@ -5,6 +5,7 @@ import { enviroment } from 'src/enviroment/enviroment';
 import { Client } from '../entitys/ClientModel';
 import jwtDecode from 'jwt-decode';
 import { Observable } from 'rxjs';
+import { OrderEntity } from '../entitys/OrderEntityModel';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class ClientServiceService {
   baseUrl: String = enviroment.baseUrl;
-
+  
 
   constructor(private httpClient: HttpClient, private route: Router) { }
 
