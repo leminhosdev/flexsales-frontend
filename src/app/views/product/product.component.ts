@@ -131,11 +131,9 @@ export class ProductComponent implements OnInit{
     productsAmount: this.totalItens
 
     }
-    this.orderService.saveOrder(this.order).subscribe(
-      result => console.log('oi')
-    );
+    this.orderService.saveOrder(this.order).subscribe();
     
     
   }
 }
-
+''
