@@ -18,9 +18,13 @@ export class OrderServiceService {
 
   constructor(private httpClient: HttpClient, private route: Router) { }
 
-  saveOrder(order: OrderEntity){
+  saveOrder(order: OrderEntity, productList: Product[]){
     const url = `${this.baseUrl}/saveorder`;
-    return this.httpClient.post<OrderEntity>(url, order);
+    const requestPayload = {
+      orderEntity: order,
+      productList: productList
+    };
+    return this.httpClient.post<OrderEntity>(url, requestPayload);
   }
   
 }

@@ -131,7 +131,8 @@ export class ProductComponent implements OnInit{
     productsAmount: this.totalItens
 
     }
-    this.orderService.saveOrder(this.order).subscribe();
+    console.log(this.productList)
+    this.orderService.saveOrder(this.order, this.productList).subscribe();
     
     
   }
