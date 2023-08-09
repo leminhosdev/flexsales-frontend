@@ -130,9 +130,10 @@ body{
     height: 120px;
     border-radius: 5px;
     max-width: 1200px;
-    display: flex;
-    flex-direction: column;
     
+    overflow-y: auto;
+    flex-direction: column;
+    overflow-y: auto;
     align-items: center;
 }
 .sales-history p{
@@ -151,6 +152,7 @@ body{
 color: #cacaca;
 }
 .no-sales-container{
+    margin-top: 45px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -165,6 +167,51 @@ align-items: center;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    cursor: pointer;
+}
+.orders-history{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    height: fit-content;
+    margin-top: 10px;
+    flex-direction: column;
+  
+    border-bottom: 1px solid rgb(206, 206, 206);
+}
+.dados{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    max-width: 290px;
+    margin-left: 10px;
+}
+.dados-2{
+    display: flex;
+    width: 90%;
+    padding-left: 9px;
+}
+#itens{
+    margin-left: 15px;
+}
+
+#profit-sales-history{
+    color: rgb(3, 182, 3);
+}
+.container-add-button{
+    margin-top: 10px;
+    width: 100%;
+    max-width: 1200px;
+    min-width: 305px;
+}
+.container-add-button button{
+    font-family: 'Poppins', sans-serif;
+    height: 29px;
+    width: 120px;
+    font-weight: 500;
+    border: 2px solid #c5c5c5;
+    border-radius: 5px;
+    color: #000000;
     cursor: pointer;
 }
 

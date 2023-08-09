@@ -1,4 +1,5 @@
 import { ExcelFile } from "./ExcelFileModel";
+import { OrderEntity } from "./OrderEntityModel";
 
 export interface Client{
     id?: String;
@@ -12,4 +13,5 @@ export interface Client{
     salesData: Date;
     excelFile: ExcelFile;
     productList: Client[];
+    orderEntityList: OrderEntity[];
 }

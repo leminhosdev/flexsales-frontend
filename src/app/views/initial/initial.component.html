@@ -23,12 +23,24 @@
             <div class="sales-history-container">
                 <p class="sales-history-container-p1">Recent sales</p>
                 <div class="sales-history">
-                    <div *ngIf="client?.sales == null" class="no-sales-container">
+                    <div *ngIf="client?.orderEntityList == null" class="no-sales-container">
                         <p class="sales-history-container-p2">No orders placed yet</p>
-                        <button (click)="openDialog()" >Add sale</button>
                     </div>
-                    
+                    <div class="orders-history" *ngFor="let orders of client.orderEntityList">
+                        <div class="dados-2">
+                            <p>asd123123</p> 
+                            <p id="itens">Itens: {{orders.productsAmount}}</p>
+                    </div>
+                        <div class="dados">
+                                <p>Total: R${{orders.totalPrice}}</p> 
+                                <p id="profit-sales-history">+ R${{orders.totalCommissionValue}}</p>
+                        </div>
+                    </div>
                 </div>
+                <div class="container-add-button" *ngIf="client.excelFile != null">
+                    <button (click)="openDialog()">Register order</button>
+                </div>
+                
             </div>
         </div>
         <h1 class="dashboard-text">Dashboard</h1>
