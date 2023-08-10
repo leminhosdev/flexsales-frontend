@@ -27,6 +27,8 @@ body{
     flex-direction: column;
     font-weight: 500;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.137);
+    justify-content: center;
+  align-items: center;
 }
 .sales-history{
     
@@ -218,6 +220,10 @@ align-items: center;
     width: 500px;
     height: 500px;
    
+}
+#piechart2{
+    margin-left: 0px;
+
 }
 
 
